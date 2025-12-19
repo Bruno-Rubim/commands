@@ -1,0 +1,56 @@
+body {
+  background-color: black;
+  justify-items: center;
+  color: rgb(0, 255, 0);
+}
+
+body * {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+#terminal {
+  margin-top: 100px;
+  margin-bottom: 25px;
+  border: 2px #0f0 solid;
+  padding: 15px;
+}
+
+#log {
+  width: 750px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+#log::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#path {
+  display: inline;
+}
+
+input {
+  display: inline;
+  background-color: black;
+  outline: none;
+  color: rgb(0, 255, 0);
+  border: none;
+}
+
+input::placeholder {
+  color: rgba(0, 255, 0, 0.411);
+}
+
+input::selection {
+  color: rgb(0, 0, 0);
+  background-color: #0f0;
+}
+
+#debug {
+  color: #f00;
+}
