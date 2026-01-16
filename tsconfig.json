@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "removeComments": true,
-    "rootDir": "./scripts",
+    "rootDir": "./ts",
     "outDir": "./js",
     "module": "nodenext",
     "target": "esnext",

@@ -1,6 +1,8 @@
 import { changePath } from "./commands/changePath.js";
+import { helpText } from "./commands/helpText.js";
 import listFolderContent from "./commands/listFolderContent.js";
 import { addToHistory, navigateHistory } from "./commands/navigateHistory.js";
+import { printFileContent } from "./commands/readFile.js";
 import { inputElement } from "./elements.js";
 import { gameState } from "./main.js";
 import terminal from "./terminal.js";
@@ -12,17 +14,23 @@ function inputInterpreter(inputValue: string) {
     return;
   }
   const command = inputValue.trim();
-  const commandParts = command.split(" ");
+  const commandArguments = command.split(" ");
 
-  switch (commandParts[0]) {
+  switch (commandArguments[0]) {
     case "cd":
-      changePath(commandParts[1], gameState.currentMachine);
+      changePath(commandArguments[1], gameState.currentMachine);
       break;
     case "ls":
       listFolderContent();
       break;
+    case "cat":
+      printFileContent(commandArguments[1]);
+      break;
+    case "help":
+      terminal.writeLine(helpText);
+      break;
     default:
-      terminal.writeLine(`Unknown command "${commandParts[0]}"`);
+      terminal.writeLine(`Unknown command "${commandArguments[0]}"`);
       break;
   }
   terminal.writeLine(" ");
