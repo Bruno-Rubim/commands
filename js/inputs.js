@@ -1,4 +1,5 @@
 import { changePath } from "./commands/changePath.js";
+import { helpText } from "./commands/helpText.js";
 import listFolderContent from "./commands/listFolderContent.js";
 import { addToHistory, navigateHistory } from "./commands/navigateHistory.js";
 import { printFileContent } from "./commands/readFile.js";
@@ -8,7 +9,6 @@ import terminal from "./terminal.js";
 function inputInterpreter(inputValue) {
     terminal.writeLine(gameState.currentPath + "> " + inputValue);
     if (inputValue.trim() == "") {
-        console.log("nothing");
         return;
     }
     const command = inputValue.trim();
@@ -22,6 +22,9 @@ function inputInterpreter(inputValue) {
             break;
         case "cat":
             printFileContent(commandArguments[1]);
+            break;
+        case "help":
+            terminal.writeLine(helpText);
             break;
         default:
             terminal.writeLine(`Unknown command "${commandArguments[0]}"`);

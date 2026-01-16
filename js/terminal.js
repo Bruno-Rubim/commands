@@ -1,7 +1,6 @@
 import { logElement } from "./elements.js";
 const terminal = {
     writeLine(line) {
-        console.log("writing", line);
         const pre = document.createElement("pre");
         pre.textContent = line;
         logElement.appendChild(pre);
