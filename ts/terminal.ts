@@ -7,6 +7,9 @@ const terminal = {
     logElement.appendChild(pre);
     logElement.scrollTo(0, logElement.scrollHeight);
   },
+  clearScreen() {
+    logElement.innerHTML = "";
+  },
 };
 
 export default terminal;

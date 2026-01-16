@@ -31,4 +31,8 @@ export function changePath(path: string | undefined, machine: Machine) {
       `Path "${fullPath}" not found or is not a valid directory.`
     );
   }
+  console.log(
+    JSON.parse(JSON.stringify(gameState.currentFolder.content)),
+    "end of change path"
+  );
 }
